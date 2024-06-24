@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import data from "./constant/data";
+import Card from "./components/Card";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto w-screen h-screen">
+      <h1 className="text-2xl font-bold text-center my-8">
+        Horizontal Scroll Cards
+      </h1>
+      <div className="overflow-x-scroll whitespace-nowrap py-4">
+        {data.map((card) => (
+            <Card
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              tag={card.tag}
+            />
+        ))}
+      </div>
     </div>
   );
 }
